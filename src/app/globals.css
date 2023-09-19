@@ -25,3 +25,24 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.container {
+  padding: 7% 15%;
+}
+.container-child {
+  padding: 2% 15%;
+}
+
+.brand {
+  font-size: 2rem;
+}
+
+#title .container {
+  padding: 3% 15% 7%;
+  text-align: left;
+}
+
+.big-heading {
+  font-size: 3rem;
+  line-height: 1.5;
+}

@@ -4,6 +4,7 @@ import axios from "axios";
 import { Bar } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
 Chart.register(...registerables);
+import { format } from "date-fns";
 
 interface GraphDataItem {
   resultTime: string;
@@ -34,9 +35,12 @@ export default function ShowGraph() {
   const availabilities = graphData.map(
     (item: GraphDataItem) => item.availability
   );
+  const formattedResultTimes = resultTimes.map((resultTime) =>
+    format(new Date(resultTime), "dd/MM/yyyy HH:mm:ss")
+  );
 
   const data = {
-    labels: resultTimes,
+    labels: formattedResultTimes,
     datasets: [
       {
         label: "Availability",
@@ -58,7 +62,7 @@ export default function ShowGraph() {
   };
 
   return (
-    <div>
+    <div className="container-child">
       <h1>Availability Graph</h1>
       <Bar
         data={data}

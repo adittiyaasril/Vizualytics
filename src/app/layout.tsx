@@ -1,10 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Alegreya } from "next/font/google";
+import { PT_Sans_Narrow } from "next/font/google";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Providers from "./providers";
 
-const alegreya = Alegreya({ subsets: ["latin"], weight: ["400", "700"] });
+const narrow = PT_Sans_Narrow({ subsets: ["latin"], weight: ["400", "700"] });
 const queryClient = new QueryClient();
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={alegreya.className}>
+      <body className={narrow.className}>
         <Providers>{children}</Providers>
       </body>
     </html>
