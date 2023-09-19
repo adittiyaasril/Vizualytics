@@ -18,7 +18,7 @@ export default function ShowGraph() {
     isError,
   } = useQuery<GraphDataItem[]>(["graphData"], async () => {
     const response = await axios.get(
-      "http://localhost:8000/raw-data/graph?enodebId=1041003&cellId=22&startDate=2022-07-01&endDate=2022-07-31"
+      "https://vizualytics-be.vercel.app/raw-data/graph?enodebId=1041003&cellId=22&startDate=2022-07-01&endDate=2022-07-31"
     );
     return response.data;
   });

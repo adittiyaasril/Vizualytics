@@ -10,7 +10,7 @@ export default function Upload() {
   const uploadFile = async (formData: FormData) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/raw-data/upload",
+        "https://vizualytics-be.vercel.app/raw-data/upload",
         formData
       );
       return response.data;
